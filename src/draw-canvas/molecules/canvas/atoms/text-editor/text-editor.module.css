@@ -1,0 +1,46 @@
+.root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 8;
+}
+
+.editor {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  position: absolute;
+
+  svg {
+    width: 16px;
+  }
+
+  button {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.textarea {
+  border: none;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  resize: auto;
+  border-width: 1px;
+  border-style: solid;
+  min-width: 56px;
+}

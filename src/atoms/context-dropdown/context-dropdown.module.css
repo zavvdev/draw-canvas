@@ -1,0 +1,60 @@
+@import "../../styles/theme.scss";
+
+.root {
+  position: relative;
+}
+
+.opener {
+  background: none;
+  outline: none;
+  padding: 0;
+  border: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown {
+  display: flex;
+  gap: 4px;
+  background-color: $cWhite;
+  padding: 4px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  max-width: 174px;
+  width: max-content;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+}
+
+.topRight {
+  top: -8px;
+  right: 0;
+  left: unset;
+  transform: translateY(-100%);
+}
+
+.topLeft {
+  top: -8px;
+  left: 0;
+  right: unset;
+  transform: translateY(-100%);
+}
+
+.bottomRight {
+  bottom: -8px;
+  right: 0;
+  left: unset;
+  transform: translateY(100%);
+}
+
+.bottomLeft {
+  bottom: -8px;
+  left: 0;
+  right: unset;
+  transform: translateY(100%);
+}

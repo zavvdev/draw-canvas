@@ -1,0 +1,115 @@
+@import "../../styles/theme.scss";
+
+.root {
+  position: relative;
+}
+
+.pickerBtn {
+  height: 50px;
+  border-radius: 8px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $cGray1;
+  background: none;
+  outline: none;
+  color: $cGray1;
+
+  &:hover {
+    color: $cGray0Dark;
+  }
+
+  .value {
+    width: 85%;
+    height: 85%;
+    border-radius: 4px;
+  }
+
+  &.small {
+    height: 36px;
+    width: 36px;
+    border-radius: 4px;
+
+    .value {
+      border-radius: 2px;
+    }
+  }
+
+  &.error {
+    border-color: $cRed;
+    color: $cRed;
+    background-color: $cRedDim2;
+  }
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+  background-color: $cWhite;
+  padding: 4px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  max-width: 174px;
+  width: max-content;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 55px;
+  left: 0;
+  z-index: 10;
+
+  &.small {
+    top: 40px;
+  }
+
+  li {
+    height: 30px;
+
+    button {
+      height: 30px;
+      width: 30px;
+      border: none;
+      background: none;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.topLeft {
+  top: -8px !important;
+  left: 0;
+  right: unset;
+  transform: translateY(-100%);
+}
+
+.topRight {
+  top: -8px !important;
+  right: 0;
+  left: unset;
+  transform: translateY(-100%);
+}
+
+.bottomRight {
+  right: 0;
+  left: unset;
+}
+
+.bottomLeft {
+  left: 0;
+  right: unset;
+}
+
+.clearBtn {
+  color: $cRed;
+  border: 1px dashed $cRed !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: $cRedDim;
+  }
+}

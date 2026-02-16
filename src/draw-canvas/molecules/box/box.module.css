@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.justifyBetween {
+  justify-content: space-between;
+}
+
+.alignCenter {
+  align-items: center;
+}

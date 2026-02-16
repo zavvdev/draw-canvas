@@ -1,0 +1,39 @@
+@import "../../../styles/theme.scss";
+
+.opener {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: $cPrimary;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: max-content;
+  padding: 10px 15px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  hr {
+    margin: 0;
+  }
+
+  & > * {
+    width: 100%;
+  }
+}

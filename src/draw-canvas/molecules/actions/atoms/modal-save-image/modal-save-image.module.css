@@ -1,0 +1,10 @@
+@import "../../../../../styles/theme.scss";
+
+.footer {
+  display: flex;
+  gap: 8px;
+}
+
+.ext {
+  color: $cGray2;
+}
