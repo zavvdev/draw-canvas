@@ -3,9 +3,6 @@
 }
 
 .pickerBtn {
-  height: 50px;
-  border-radius: 8px;
-  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +10,13 @@
   background: none;
   outline: none;
   color: var(--c-gray1);
+  height: 36px;
+  width: 36px;
+  border-radius: 4px;
+
+  .value {
+    border-radius: 2px;
+  }
 
   &:hover {
     color: var(--c-gray0-dark);
@@ -22,16 +26,6 @@
     width: 85%;
     height: 85%;
     border-radius: 4px;
-  }
-
-  &.small {
-    height: 36px;
-    width: 36px;
-    border-radius: 4px;
-
-    .value {
-      border-radius: 2px;
-    }
   }
 
   &.error {
@@ -54,13 +48,9 @@
   width: max-content;
   flex-wrap: wrap;
   position: absolute;
-  top: 55px;
+  top: 40px;
   left: 0;
   z-index: 10;
-
-  &.small {
-    top: 40px;
-  }
 
   li {
     height: 30px;

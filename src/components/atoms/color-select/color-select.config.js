@@ -10,3 +10,10 @@ export var DEFAULT_COLORS = [
   "#c0c40f",
   "#e78d0b",
 ];
+
+export var COLOR_SELECT_POS = {
+  topLeft: "top-left",
+  topRight: "top-right",
+  bottomLeft: "bottom-left",
+  bottomRight: "bottom-right",
+};

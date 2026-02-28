@@ -1,11 +1,8 @@
 import cx from "clsx";
 import styles from "./menu-button.module.css";
+import { MENU_BUTTON_COLORS } from "./menu-button.config";
 
-export const MENU_BUTTON_COLORS = {
-  danger: "danger",
-};
-
-export const MenuButton = ({
+export var MenuButton = ({
   title,
   onClick,
   isDisabled,

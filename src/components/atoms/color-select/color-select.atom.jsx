@@ -1,17 +1,9 @@
 import { useRef, useState } from "react";
 import cx from "clsx";
-import classes from "./color-select.module.css";
+import { Palette, Cross } from "lucide-react";
 import { useClickOutside } from "../../../utilities/hooks/use-click-outside";
-import { DEFAULT_COLORS } from "./color-select.config";
-import { Palette } from "lucide-react";
-import { Cross } from "lucide-react";
-
-export var COLOR_SELECT_POS = {
-  topLeft: "top-left",
-  topRight: "top-right",
-  bottomLeft: "bottom-left",
-  bottomRight: "bottom-right",
-};
+import styles from "./color-select.module.css";
+import { DEFAULT_COLORS, COLOR_SELECT_POS } from "./color-select.config";
 
 /**
  * @param {Object} param0
@@ -20,7 +12,6 @@ export var COLOR_SELECT_POS = {
  * @param {string[]?} param0.options
  * @param {string[]?} param0.additionOptions
  * @param {(nextOption: string) => void} param0.onChange
- * @param {"small"} param0.size
  * @param {boolean?} param0.closeOnSelect
  * @param {boolean?} param0.clearable
  * @param {string?} param0.testId
@@ -28,12 +19,11 @@ export var COLOR_SELECT_POS = {
  * @param {string?} param0.openerClassName
  * @param {string?} param0.position
  */
-export const ColorSelect = ({
+export var ColorSelect = ({
   value,
   options = DEFAULT_COLORS,
   additionOptions = [],
   onChange,
-  size,
   closeOnSelect = true,
   isError,
   clearable = false,
@@ -42,55 +32,49 @@ export const ColorSelect = ({
   openerClassName,
   position = COLOR_SELECT_POS.bottomLeft,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const rootRef = useRef(null);
+  var { 0: isOpen, 1: setIsOpen } = useState(false);
+  var rootRef = useRef(null);
 
-  const handleChange = (nextValue) => {
+  var handleChange = (nextValue) => {
     onChange(nextValue);
-
-    if (closeOnSelect) {
-      setIsOpen(false);
-    }
+    if (closeOnSelect) setIsOpen(false);
   };
 
-  const colorOptions = [...options, ...additionOptions];
-
+  var colorOptions = [...options, ...additionOptions];
   useClickOutside(rootRef, () => setIsOpen(false));
 
   return (
-    <div ref={rootRef} className={cx(classes.root, className)}>
+    <div ref={rootRef} className={cx(styles.root, className)}>
       <button
         data-testid={testId}
         className={cx(
-          classes.pickerBtn,
+          styles.pickerBtn,
           {
-            [classes.small]: size === "small",
-            [classes.error]: isError,
+            [styles.error]: isError,
           },
           openerClassName,
         )}
         onClick={() => setIsOpen((prev) => !prev)}
       >
         {value ? (
-          <span style={{ backgroundColor: value }} className={classes.value} />
+          <span style={{ backgroundColor: value }} className={styles.value} />
         ) : (
-          <Palette width={size === "small" ? "19px" : "21px"} />
+          <Palette width="19px" />
         )}
       </button>
       {isOpen && (
         <ul
-          className={cx(classes.list, {
-            [classes.small]: size === "small",
-            [classes.topLeft]: position === COLOR_SELECT_POS.topLeft,
-            [classes.topRight]: position === COLOR_SELECT_POS.topRight,
-            [classes.bottomLeft]: position === COLOR_SELECT_POS.bottomLeft,
-            [classes.bottomRight]: position === COLOR_SELECT_POS.bottomRight,
+          className={cx(styles.list, {
+            [styles.topLeft]: position === COLOR_SELECT_POS.topLeft,
+            [styles.topRight]: position === COLOR_SELECT_POS.topRight,
+            [styles.bottomLeft]: position === COLOR_SELECT_POS.bottomLeft,
+            [styles.bottomRight]: position === COLOR_SELECT_POS.bottomRight,
           })}
         >
           {clearable && (
             <li>
               <button
-                className={classes.clearBtn}
+                className={styles.clearBtn}
                 onClick={() => handleChange(undefined)}
               >
                 <Cross width="14px" />

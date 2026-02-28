@@ -7,10 +7,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --c-primary: #188bf6;
+  --c-primary-dim: #dbeefd;
+
   --c-white: #ffffff;
 
   --c-gray0-dark: #7e7e7e;
   --c-gray1: #b5b5b5;
+  --c-gray3: #ededed;
 
   --c-red: #bf2828;
   --c-red-dim: #f5e7e7;

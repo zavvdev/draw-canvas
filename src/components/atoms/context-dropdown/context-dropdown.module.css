@@ -1,7 +1,6 @@
-@import "../../styles/theme.scss";
-
 .root {
   position: relative;
+  width: max-content;
 }
 
 .opener {
@@ -18,7 +17,7 @@
 .dropdown {
   display: flex;
   gap: 4px;
-  background-color: $cWhite;
+  background-color: var(--c-white);
   padding: 4px;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);

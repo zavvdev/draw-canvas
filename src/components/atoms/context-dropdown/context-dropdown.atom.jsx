@@ -1,17 +1,10 @@
 import { useRef, useState } from "react";
 import cx from "clsx";
-import { useClickOutside } from "../../utilities/hooks/useClickOutside";
-import { not } from "../../utilities/fp";
-import styles from "./styles.module.scss";
+import { useClickOutside } from "../../../utilities/hooks/use-click-outside";
+import styles from "./context-dropdown.module.css";
+import { CONTEXT_DROPDOWN_POS } from "./context-dropdown.config";
 
-export const CONTEXT_DROPDOWN_POS = {
-  topRight: "top-right",
-  topLeft: "top-left",
-  bottomRight: "bottom-right",
-  bottomLeft: "bottom-left",
-};
-
-export const ContextDropdown = ({
+export var ContextDropdown = ({
   children,
   opener,
   dropdownClassName,
@@ -21,16 +14,15 @@ export const ContextDropdown = ({
   dropdownY,
   dropdownMaxWidth,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const rootRef = useRef(null);
-
+  var { 0: isOpen, 1: setIsOpen } = useState(false);
+  var rootRef = useRef(null);
   useClickOutside(rootRef, () => setIsOpen(false));
 
   return (
     <div ref={rootRef} className={cx(styles.root, className)}>
       <button
         className={cx(styles.opener, openerClassName)}
-        onClick={() => setIsOpen(not)}
+        onClick={() => setIsOpen((x) => !x)}
       >
         {opener}
       </button>
@@ -54,4 +46,4 @@ export const ContextDropdown = ({
       )}
     </div>
   );
-}
+};
