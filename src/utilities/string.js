@@ -1,3 +1,3 @@
-export const stringUtil = {
+export var stringUtil = {
   len: (str) => [...str].length,
 };

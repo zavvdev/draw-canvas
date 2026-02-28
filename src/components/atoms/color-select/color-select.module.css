@@ -1,5 +1,3 @@
-@import "../../styles/theme.scss";
-
 .root {
   position: relative;
 }
@@ -11,13 +9,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid $cGray1;
+  border: 1px solid var(--c-gray1);
   background: none;
   outline: none;
-  color: $cGray1;
+  color: var(--c-gray1);
 
   &:hover {
-    color: $cGray0Dark;
+    color: var(--c-gray0-dark);
   }
 
   .value {
@@ -37,9 +35,9 @@
   }
 
   &.error {
-    border-color: $cRed;
-    color: $cRed;
-    background-color: $cRedDim2;
+    border-color: var(--c-red);
+    color: var(--c-red);
+    background-color: var(--c-red-dim2);
   }
 }
 
@@ -47,7 +45,7 @@
   list-style: none;
   display: flex;
   gap: 4px;
-  background-color: $cWhite;
+  background-color: var(--c-white);
   padding: 4px;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -103,13 +101,13 @@
 }
 
 .clearBtn {
-  color: $cRed;
-  border: 1px dashed $cRed !important;
+  color: var(--c-red);
+  border: 1px dashed var(--c-red-dim2);
   display: flex;
   align-items: center;
   justify-content: center;
 
   &:hover {
-    background-color: $cRedDim;
+    background-color: var(--c-red-dim);
   }
 }

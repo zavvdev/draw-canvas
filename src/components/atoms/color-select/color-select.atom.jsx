@@ -1,13 +1,12 @@
 import { useRef, useState } from "react";
 import cx from "clsx";
-import classes from "./ColorSelect.module.scss";
-import { PaletteIcon } from "../../assets/Icons/PaletteIcon";
-import { useAppTranslation } from "../../i18n/useAppTranslation";
-import { useClickOutside } from "../../utilities/hooks/useClickOutside";
-import { DEFAULT_COLORS } from "./ColorSelect.config";
-import { CrossIcon } from "../../assets/Icons/CrossIcon";
+import classes from "./color-select.module.css";
+import { useClickOutside } from "../../../utilities/hooks/use-click-outside";
+import { DEFAULT_COLORS } from "./color-select.config";
+import { Palette } from "lucide-react";
+import { Cross } from "lucide-react";
 
-export const COLOR_SELECT_POS = {
+export var COLOR_SELECT_POS = {
   topLeft: "top-left",
   topRight: "top-right",
   bottomLeft: "bottom-left",
@@ -43,7 +42,6 @@ export const ColorSelect = ({
   openerClassName,
   position = COLOR_SELECT_POS.bottomLeft,
 }) => {
-  const { tCommon } = useAppTranslation.Common();
   const [isOpen, setIsOpen] = useState(false);
   const rootRef = useRef(null);
 
@@ -76,12 +74,11 @@ export const ColorSelect = ({
         {value ? (
           <span style={{ backgroundColor: value }} className={classes.value} />
         ) : (
-          <PaletteIcon width={size === "small" ? "19px" : "21px"} />
+          <Palette width={size === "small" ? "19px" : "21px"} />
         )}
       </button>
       {isOpen && (
         <ul
-          data-testid="list"
           className={cx(classes.list, {
             [classes.small]: size === "small",
             [classes.topLeft]: position === COLOR_SELECT_POS.topLeft,
@@ -93,25 +90,23 @@ export const ColorSelect = ({
           {clearable && (
             <li>
               <button
-                data-testid="clear"
                 className={classes.clearBtn}
                 onClick={() => handleChange(undefined)}
               >
-                <CrossIcon width="14px" />
+                <Cross width="14px" />
               </button>
             </li>
           )}
           {colorOptions.length > 0
             ? colorOptions.map((color) => (
-                <li key={color}>
-                  <button
-                    data-testid={color}
-                    style={{ backgroundColor: color }}
-                    onClick={() => handleChange(color)}
-                  />
-                </li>
-              ))
-            : tCommon("label.empty")}
+              <li key={color}>
+                <button
+                  style={{ backgroundColor: color }}
+                  onClick={() => handleChange(color)}
+                />
+              </li>
+            ))
+            : "Empty"}
         </ul>
       )}
     </div>

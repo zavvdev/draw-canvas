@@ -29,7 +29,7 @@ export const shouldAddPoint = (last, next) => {
   const dx = next.x - last.x;
   const dy = next.y - last.y;
   return (
-    dx * dx + dy * dy >= Math.pow(DRAW_AREA_MIN_POINT_DISTANCE_TO_RECORD, 2)
+    dx * dx + dy * dy >= DRAW_AREA_MIN_POINT_DISTANCE_TO_RECORD ** 2
   );
 };
 

@@ -1,4 +1,4 @@
-export const DEFAULT_COLORS = [
+export var DEFAULT_COLORS = [
   "#ec0b0b",
   "#e30bec",
   "#990bec",
