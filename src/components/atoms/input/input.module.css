@@ -1,0 +1,55 @@
+.root {
+  border-radius: 8px;
+  border: 1px solid var(--c-gray1);
+  background-color: var(--c-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+  min-height: 36px;
+  border-radius: 4px;
+
+  input {
+    font-size: 14px;
+    padding: 0 10px 1px 10px;
+  }
+}
+
+.input {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  border: none !important;
+  outline: none;
+  background: transparent;
+  padding: 0 15px 1px 15px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--c-black);
+}
+
+.rightAdornment {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 10px;
+}
+
+.disabled {
+  background-color: var(--c-gray4);
+  pointer-events: none;
+  cursor: default;
+  user-select: none;
+
+  input {
+    color: var(--c-gray0);
+    -webkit-text-fill-color: var(--c-gray0);
+
+    &::placeholder {
+      color: var(--c-gray2);
+      -webkit-text-fill-color: var(--c-gray2); 
+    }
+  }
+}

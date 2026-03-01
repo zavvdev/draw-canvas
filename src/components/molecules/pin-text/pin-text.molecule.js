@@ -22,7 +22,7 @@ export const PinText = () => {
   return (
     <div>
       <InputLabel>{t("pinText")}</InputLabel>
-      <Input size="small" value={get.pinText} onChange={onChange} />
+      <Input value={get.pinText} onChange={onChange} />
     </div>
   );
 };

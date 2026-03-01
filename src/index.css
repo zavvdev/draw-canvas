@@ -9,14 +9,23 @@
 
   --c-primary: #188bf6;
   --c-primary-dim: #dbeefd;
+  --c-primary-dark: #217acd;
 
   --c-white: #ffffff;
+  --c-black: #000000;
 
   --c-gray0-dark: #7e7e7e;
+  --c-gray0: #a4abb2;
   --c-gray1: #b5b5b5;
+  --c-gray2: #c3c9ce;
   --c-gray3: #ededed;
+  --c-gray4: #f3f3f3;
 
   --c-red: #bf2828;
   --c-red-dim: #f5e7e7;
   --c-red-dim2: #fff8f8;
+  --c-red-dark: #972b2b;
+
+  --c-green: #23b023;
+  --c-green-dark: #1a821a;
 }

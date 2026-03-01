@@ -10,6 +10,7 @@ import { SaveIcon } from "../../../assets/Icons/SaveIcon";
 import { useSaveImageAction } from "./hooks/useSaveImageAction";
 import { SaveImageModal } from "./shared/SaveImageModal";
 import { BrushCleaningIcon } from "../../../assets/Icons/BrushCleaningIcon";
+import { DRAW_AREA_DEFAULT_EXPORT_FILE } from "../../organisms/draw-canvas/draw-canvas.config";
 
 export const Actions = ({ use = [] } = {}) => {
   const { tCommon: t } = useAppTranslation.Common({
@@ -82,6 +83,7 @@ export const Actions = ({ use = [] } = {}) => {
           setFileName={saveImageAction.setFileName}
           onClose={saveImageAction.onCancelSave}
           onSave={saveImageAction.onConfirmSave}
+          extension={DRAW_AREA_DEFAULT_EXPORT_FILE.extension}
         />
       )}
     </div>

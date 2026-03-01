@@ -1,45 +1,40 @@
-import { Modal } from "../../../../../shared/Modal/Modal";
-import { InputLabel } from "../../../../../shared/InputLabel/InputLabel";
-import { useAppTranslation } from "../../../../../i18n/useAppTranslation";
-import { Input } from "../../../../../shared/Input/Input";
-import { Button } from "../../../../../shared/Button/Button";
+import { Modal } from "../../../../atoms/modal/modal.atom";
+import { InputLabel } from "../../../../atoms/input-label/input-label.atom";
+import { Button } from "../../../../atoms/button/button.atom";
+import { Input } from "../../../../atoms/input/input.atom";
 import styles from "./styles.module.scss";
-import { DRAW_AREA_DEFAULT_EXPORT_FILE } from "../../../config";
 
-const INPUT_ID = "draw-area-save-image-filename-input";
+var INPUT_ID = "draw-area-save-image-filename-input";
 
-export const SaveImageModal = ({ onClose, fileName, setFileName, onSave }) => {
-  const { tCommon: t } = useAppTranslation.Common({
-    keyPrefix: "drawArea.saveImageModal",
-  });
-
+export var SaveImageModal = ({
+  onClose,
+  fileName,
+  setFileName,
+  onSave,
+  extension,
+}) => {
   return (
     <Modal
       isOpen
       onClose={onClose}
-      size="small"
-      header={<Modal.Title>{t("title")}</Modal.Title>}
+      header={<Modal.Title>Save Image</Modal.Title>}
       footer={
         <div className={styles.footer}>
           <Button variant="outlined" onClick={onClose}>
-            {t("cancel")}
+            Cancel
           </Button>
-          <Button onClick={onSave}>{t("save")}</Button>
+          <Button onClick={onSave}>Save</Button>
         </div>
       }
     >
-      <InputLabel htmlFor={INPUT_ID}>{t("fileNameLabel")}</InputLabel>
+      <InputLabel htmlFor={INPUT_ID}>File Name</InputLabel>
       <Input
         autoFocus
         id={INPUT_ID}
         value={fileName}
         onChange={(e) => setFileName(e.target.value)}
-        rightAdornment={
-          <span className={styles.ext}>
-            {DRAW_AREA_DEFAULT_EXPORT_FILE.extension}
-          </span>
-        }
+        rightAdornment={<span className={styles.ext}>{extension}</span>}
       />
     </Modal>
   );
-}
+};

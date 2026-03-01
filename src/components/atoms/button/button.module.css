@@ -1,0 +1,101 @@
+.root {
+  border-radius: 4px;
+  border: none;
+  background: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  transition: all 0.15s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+/* Variant */
+
+.vOutlined {
+  &.cPrimary {
+    color: var(--c-primary) !important;
+    border: 1px solid var(--c-primary) !important;
+
+    &:hover {
+      background-color: lighten(var(--c-primary-dim), 4%) !important;
+    }
+  }
+
+  &.cError {
+    color: var(--c-red) !important;
+    border: 1px solid var(--c-red) !important;
+
+    &:hover {
+      background-color: lighten(var(--c-red-dim), 2%) !important;
+    }
+  }
+
+  &.cSuccess {
+    color: var(--c-green) !important;
+    border: 1px solid var(--c-green) !important;
+
+    &:hover {
+      background-color: lighten(var(--c-green-dim), 2%) !important;
+    }
+  }
+}
+
+.vContained {
+  color: var(--c-white) !important;
+
+  &.cPrimary {
+    background-color: var(--c-primary) !important;
+
+    &:hover {
+      background-color: var(--c-primary-dark) !important;
+    }
+  }
+
+  &.cError {
+    background-color: var(--c-red) !important;
+
+    &:hover {
+      background-color: var(--c-red-dark) !important;
+    }
+  }
+
+  &.cSuccess {
+    background-color: var(--c-green) !important;
+
+    &:hover {
+      background-color: var(--c-green-dark) !important;
+    }
+  }
+}
+
+/* Size */
+
+.sTiny {
+  font-size: 13px;
+  font-weight: 300;
+  height: 30px;
+  padding: 0 5px;
+}
+
+.sDefault {
+  font-size: 16px;
+  font-weight: 500;
+  height: 44px;
+  padding: 0 30px;
+}
+
+/* Misc */
+
+.disabled {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}
